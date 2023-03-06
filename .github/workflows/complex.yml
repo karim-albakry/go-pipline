@@ -1,0 +1,33 @@
+name: second
+
+on: push
+
+jobs:
+  job1:
+   runs-on: ubuntu-latest
+   name: Run on Linux
+   steps:
+     - name: Get Date Ubuntu
+       run: date +%F
+
+  job2:
+   runs-on: windows-latest
+   name: Run on Windows
+   steps:
+     - name: Get Date Windows
+       run: "Get-Date"
+
+  job3:
+   runs-on: macos-latest
+   name: Run on macOS
+   steps:
+     - name: Get Date macOS
+       run: date +%F
+
+  job4:
+   runs-on:  ubuntu-latest
+   name: Done Check
+   needs: [job1, job2, job3]
+   steps:
+     - name: Get Date macOS
+       run: echo All done.
