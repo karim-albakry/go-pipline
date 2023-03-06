@@ -1,4 +1,4 @@
-name: second
+name: complex
 
 on: push
 
@@ -15,7 +15,7 @@ jobs:
    name: Run on Windows
    steps:
      - name: Get Date Windows
-       run: "Get-Date"
+       run: "(Get-Date).ToString()"
 
   job3:
    runs-on: macos-latest
