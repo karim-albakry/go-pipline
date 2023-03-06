@@ -29,5 +29,5 @@ jobs:
    name: Done Check
    needs: [job1, job2, job3]
    steps:
-     - name: Get Date macOS
+     - name: Print Status
        run: echo All done.
